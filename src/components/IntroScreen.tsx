@@ -6,8 +6,8 @@ interface IntroScreenProps {
 }
 
 const WORD = 'Hello';
-const TYPE_SPEED = 140; // ms per character
-const HOLD_AFTER = 900; // pause after typing completes, cursor still blinking
+const TYPE_SPEED = 60; // ms per character
+const HOLD_AFTER = 250; // pause after typing completes, cursor still blinking
 
 export default function IntroScreen({ onFinish }: IntroScreenProps) {
   const [typed, setTyped] = useState(0);
@@ -28,7 +28,7 @@ export default function IntroScreen({ onFinish }: IntroScreenProps) {
         <motion.div
           className="fixed inset-0 z-200 bg-black flex items-center justify-center"
           exit={{ opacity: 0, scale: 1.05 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="font-mono text-2xl sm:text-4xl text-white flex items-center">
             <span className="text-white/30 mr-2">$</span>
