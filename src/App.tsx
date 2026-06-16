@@ -111,7 +111,7 @@ export default function App() {
 
         {/* Portfolio Core Layout Zones */}
         <main className="flex-grow">
-          <Hero onContactClick={() => handleNavClick('contact')} ready={!showIntro} />
+          <Hero onContactClick={() => handleNavClick('contact')} />
           <LogosRibbon />
           <About />
           <Experience />

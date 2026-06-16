@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
 import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -72,13 +72,11 @@ function ImageSlide({
     >
       {/* Portrait card — smaller, clearly not square */}
       <div
+        className="absolute left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2"
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
           width: '84%',
-          height: '55vh',
+          maxHeight: '90%',
+          aspectRatio: '16 / 9',
           borderRadius: '18px',
           overflow: 'hidden',
           boxShadow: '0 8px 48px rgba(0,0,0,0.13)',
@@ -99,6 +97,14 @@ function ImageSlide({
 function ProjectDetailView({ project, onBack }: ProjectDetailProps) {
   const { t, isRtl } = useLanguage();
   const images = project.images ?? [];
+
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  const unit = isMobile ? 60 : 100;
 
   const galleryRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -224,14 +230,15 @@ function ProjectDetailView({ project, onBack }: ProjectDetailProps) {
         {/* Right — image gallery */}
         <div
           ref={scrollContainerRef}
-          className="w-full h-dvh md:w-1/2 md:h-full overflow-y-scroll overscroll-y-contain"
+          className="w-full md:w-1/2 overflow-y-scroll overscroll-y-contain"
+          style={{ height: `${unit}vh` }}
         >
           {images.length > 0 ? (
             <div
               ref={galleryRef}
-              style={{ height: `${(images.length + 1) * 100}vh`, position: 'relative' }}
+              style={{ height: `${(images.length + 1) * unit}vh`, position: 'relative' }}
             >
-              <div style={{ position: 'sticky', top: 0, height: '100vh', ...TEXTURE_BG }}>
+              <div style={{ position: 'sticky', top: 0, height: `${unit}vh`, ...TEXTURE_BG }}>
                 {images.map((src, i) => (
                   <ImageSlide
                     key={i}
