@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 215">
+
+  <!-- ── Book 3 — bottom (widest) ── -->
+  <rect x="3"  y="162" width="194" height="48" rx="6" fill="#1a3a5f"/>
+  <rect x="3"  y="173" width="194" height="12" fill="#7dc242"/>
+  <rect x="3"  y="191" width="194" height="12" fill="#7dc242"/>
+
+  <!-- ── Book 2 — middle ── -->
+  <rect x="15" y="119" width="170" height="46" rx="6" fill="#1a3a5f"/>
+  <rect x="15" y="130" width="170" height="12" fill="#7dc242"/>
+  <rect x="15" y="148" width="170" height="12" fill="#7dc242"/>
+
+  <!-- ── Book 1 — top (narrowest) ── -->
+  <rect x="27" y="78"  width="146" height="44" rx="6" fill="#1a3a5f"/>
+  <rect x="27" y="89"  width="146" height="12" fill="#7dc242"/>
+  <rect x="27" y="107" width="146" height="12" fill="#7dc242"/>
+
+  <!-- ── Cap body (visible below the board) ── -->
+  <rect x="63" y="46" width="74" height="34" rx="3" fill="#1a3a5f"/>
+
+  <!-- ── Mortarboard flat board (diamond) ── -->
+  <polygon points="100,4 196,46 100,65 4,46" fill="#1a3a5f"/>
+
+  <!-- ── Tassel ── -->
+  <line x1="196" y1="46" x2="196" y2="70" stroke="#1a3a5f" stroke-width="4" stroke-linecap="round"/>
+  <rect x="190" y="68" width="12" height="16" rx="3" fill="#1a3a5f"/>
+
+</svg>
