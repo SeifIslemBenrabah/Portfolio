@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,9 +10,10 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LogosRibbon from './components/LogosRibbon';
-import ProjectDetail from './components/ProjectDetail';
-import AllProjects from './components/AllProjects';
 import IntroScreen from './components/IntroScreen';
+
+const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
+const AllProjects = lazy(() => import('./components/AllProjects'));
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -59,18 +60,20 @@ export default function App() {
     return (
       <>
         {showIntro && <IntroScreen onFinish={() => setShowIntro(false)} />}
-        <ProjectDetail
-          project={selectedProject}
-          onBack={() => {
-            setSelectedProject(null);
-            if (projectSource === 'all') {
-              setShowAllProjects(true);
-              window.scrollTo({ top: 0 });
-            } else {
-              setTimeout(() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }), 50);
-            }
-          }}
-        />
+        <Suspense fallback={null}>
+          <ProjectDetail
+            project={selectedProject}
+            onBack={() => {
+              setSelectedProject(null);
+              if (projectSource === 'all') {
+                setShowAllProjects(true);
+                window.scrollTo({ top: 0 });
+              } else {
+                setTimeout(() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }), 50);
+              }
+            }}
+          />
+        </Suspense>
       </>
     );
   }
@@ -79,17 +82,19 @@ export default function App() {
     return (
       <>
         {showIntro && <IntroScreen onFinish={() => setShowIntro(false)} />}
-        <AllProjects
-          onBack={() => {
-            setShowAllProjects(false);
-            setTimeout(() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }), 50);
-          }}
-          onProjectClick={(p) => {
-            setProjectSource('all');
-            setSelectedProject(p);
-            window.scrollTo({ top: 0 });
-          }}
-        />
+        <Suspense fallback={null}>
+          <AllProjects
+            onBack={() => {
+              setShowAllProjects(false);
+              setTimeout(() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }), 50);
+            }}
+            onProjectClick={(p) => {
+              setProjectSource('all');
+              setSelectedProject(p);
+              window.scrollTo({ top: 0 });
+            }}
+          />
+        </Suspense>
       </>
     );
   }

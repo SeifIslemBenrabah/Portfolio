@@ -1,7 +1,7 @@
 import { Project, Service, Skill, Testimonial, Experience } from './types';
 
 // Importing generated premium assets
-import profileImg from './assets/images/portfolio2_nobg.png';
+import profileImg from './assets/images/portfolio2_nobg.webp';
 import logoBoutique from './assets/logos/logo_boutique.svg';
 import logoPhinlex from './assets/logos/logo_phinlex.svg';
 import logoCoach from './assets/logos/logo_coach.svg';
