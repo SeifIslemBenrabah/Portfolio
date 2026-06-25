@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Menu, X, ArrowUpRight, Languages } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import logoLight from '../assets/logo-light.svg';
 
 interface NavbarProps {
   onNavClick: (sectionId: string) => void;
@@ -57,9 +58,11 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
             onClick={() => handleLinkClick('home')}
             className={`flex items-center gap-2 cursor-pointer group ${isRtl ? 'flex-row-reverse' : ''}`}
           >
-            <span className="font-mozilla font-bold tracking-wider text-base inline-block">
-              Seif<span className="text-black font-light">Islem</span>
-            </span>
+            <img
+              src={logoLight}
+              alt="Seif Islem Logo"
+              className="h-8 w-auto transition-all duration-300"
+            />
           </div>
 
           {/* Desktop Navigation */}
