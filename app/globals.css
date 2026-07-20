@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Funnel Display", "Cairo", sans-serif;
+  --font-arabic: "Tajawal", "Cairo", sans-serif;
+
+  --color-orange: #F97316;
+  --color-orange-dark: #EA580C;
+  --color-orange-light: #FDBA74;
+  --color-ink: #0A0A0A;
+  --color-ink-surface: #151515;
+}
+
+html {
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+body {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
