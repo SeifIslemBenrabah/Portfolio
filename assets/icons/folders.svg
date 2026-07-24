@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="bg-folders" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="sheen-folders" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.08"/>
+    </linearGradient>
+    <clipPath id="clip-folders"><rect width="60" height="60" rx="13.28"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip-folders)">
+    <rect width="60" height="60" fill="url(#bg-folders)"/>
+    <rect width="60" height="60" fill="url(#sheen-folders)"/>
+    <g transform="translate(12,12) scale(1.5)">
+      <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
+    </g>
+  </g>
+</svg>

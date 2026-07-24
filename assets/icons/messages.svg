@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="bg-messages" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ADE80"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="sheen-messages" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.08"/>
+    </linearGradient>
+    <clipPath id="clip-messages"><rect width="60" height="60" rx="13.28"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip-messages)">
+    <rect width="60" height="60" fill="url(#bg-messages)"/>
+    <rect width="60" height="60" fill="url(#sheen-messages)"/>
+    <g transform="translate(12,12) scale(1.5)">
+      <path d="M12 3.5C6.75 3.5 2.5 7.02 2.5 11.36c0 2.53 1.44 4.78 3.68 6.22-.14 1.17-.55 2.34-1.24 3.36 1.6-.15 3.06-.77 4.26-1.7.9.26 1.85.4 2.8.4 5.25 0 9.5-3.52 9.5-7.86S17.25 3.5 12 3.5Z" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>

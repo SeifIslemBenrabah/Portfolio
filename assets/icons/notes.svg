@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="bg-notes" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCD34D"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="sheen-notes" x1="30" y1="0" x2="30" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.08"/>
+    </linearGradient>
+    <clipPath id="clip-notes"><rect width="60" height="60" rx="13.28"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip-notes)">
+    <rect width="60" height="60" fill="url(#bg-notes)"/>
+    <rect width="60" height="60" fill="url(#sheen-notes)"/>
+    <g transform="translate(12,12) scale(1.5)">
+      <path
+        d="M6.5 3.5h8.6L18.5 7v13a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z"
+        fill="none"
+        stroke="#451A03"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+      <path d="M15 3.5V7h3.3" fill="none" stroke="#451A03" stroke-width="1.6" stroke-linejoin="round" />
+      <path d="M8.2 12h7.2M8.2 15.3h7.2M8.2 8.7h4.4" fill="none" stroke="#451A03" stroke-width="1.6" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>
