@@ -7,9 +7,9 @@ import { personalInfo } from '@/data/personal';
 import projectsData from '@/data/projects';
 import { lightLogoClass } from '@/lib/utils';
 import { useTranslation } from '@/context/i18n';
+import Link from 'next/link';
 
 const heroLogos = projectsData.filter((p) => p.image).slice(0, 5);
-
 export function HeroSection() {
   const { t } = useTranslation();
 
@@ -84,18 +84,18 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="fixed bottom-4 left-4 right-4 z-50 flex flex-col gap-3 sm:static sm:mt-8 sm:mb-8 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:mt-10 lg:mb-10"
         >
-         <a
-            href="#contact"
+         <Link
+            href="/design"
             className="inline-flex z-30 items-center justify-center gap-2 bg-ink text-paper px-6 py-3.5 text-sm font-semibold hover:bg-ink/85 transition-colors cursor-pointer w-full sm:w-auto"
           >
             {t.hero.ctaDesigner}
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/dev"
             className="inline-flex z-30 items-center justify-center gap-2 border border-ink/25 text-ink bg-paper px-6 py-3.5 text-sm font-semibold hover:border-ink hover:bg-ink/5 transition-colors cursor-pointer w-full sm:w-auto"
           >
             {t.hero.ctaDeveloper}
-          </a>
+          </Link>
         </motion.div>
       </div>
 
