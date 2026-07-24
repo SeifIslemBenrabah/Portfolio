@@ -58,7 +58,7 @@ export function HeroSection() {
   initial={{ opacity: 0, y: 12 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.2 }}
-  className="flex flex-col items-center gap-4 mt-4 sm:mt-6 sm:flex-row sm:justify-between sm:gap-4 sm:w-8/12 sm:min-w-0 sm:mx-auto z-40 relative"
+  className="flex flex-col items-center gap-4 mt-4 sm:mt-6 sm:flex-row sm:justify-between sm:gap-4 sm:w-8/12 sm:min-w-0 sm:mx-auto z-10 relative"
 >
   <p className="text-ink/60 text-base sm:text-lg text-center sm:shrink-0">
     {t.hero.location.replace('{location}', personalInfo.location)}
@@ -69,7 +69,7 @@ export function HeroSection() {
         key={p.id}
         src={p.image}
         alt={p.title}
-        className={`h-5 sm:h-6 w-auto object-contain grayscale opacity-70 shrink-0 ${lightLogoClass(p)}`}
+        className={`h-5 sm:h-6 w-auto object-contain grayscale opacity-100 shrink-0 ${lightLogoClass(p)}`}
         draggable={false}
       />
     ))}
