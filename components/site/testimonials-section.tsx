@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, User } from 'lucide-react';
 
 // --- Types ---
 interface Testimonial {
@@ -75,6 +75,41 @@ const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
 // --- Sub-Components ---
+const Avatar = ({ image, name }: { image: string; name: string }) => {
+  const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // A fast-failing image (e.g. an expired signed URL) can finish loading before
+  // React hydrates and attaches onError, so the event is missed — catch that
+  // already-failed state on mount instead of relying on the event alone.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) {
+      setFailed(true);
+    }
+  }, []);
+
+  if (failed || !image) {
+    return (
+      <div className="h-10 w-10 rounded-full ring-2 ring-paper-line bg-paper-surface flex items-center justify-center shrink-0">
+        <User className="h-5 w-5 text-ink/40" />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      ref={imgRef}
+      width={40}
+      height={40}
+      src={image}
+      alt={`Avatar of ${name}`}
+      onError={() => setFailed(true)}
+      className="h-10 w-10 rounded-full object-cover ring-2 ring-paper-line transition-all duration-300 ease-in-out"
+    />
+  );
+};
+
 const TestimonialsColumn = (props: {
   className?: string;
   testimonials: Testimonial[];
@@ -121,13 +156,7 @@ const TestimonialsColumn = (props: {
                       {text}
                     </p>
                     <footer className="flex items-center gap-3 mt-6">
-                      <img
-                        width={40}
-                        height={40}
-                        src={image}
-                        alt={`Avatar of ${name}`}
-                        className="h-10 w-10 rounded-full object-cover ring-2 ring-paper-line transition-all duration-300 ease-in-out"
-                      />
+                      <Avatar image={image} name={name} />
                       <div className="flex flex-col">
                         <cite className="font-semibold not-italic tracking-tight leading-5 text-ink transition-colors duration-300">
                           {name}
