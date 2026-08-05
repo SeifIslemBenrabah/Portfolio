@@ -49,6 +49,17 @@ const fr: Dict = {
     },
     featured: 'À la une',
   },
+  project: {
+    backToDesign: 'Retour au Design',
+    backToDev: 'Retour au Dev',
+    visitLive: 'Voir le site en ligne',
+    viewGithub: 'Voir sur GitHub',
+    viewBehance: 'Voir l\'étude de cas sur Behance',
+    techStack: 'Stack technique',
+    features: 'Fonctionnalités',
+    result: 'Résultat',
+    grade: 'Note :',
+  },
   footer: {
     eyebrow: 'Contactez-moi',
     headline: 'Construisons quelque chose qui vaut la peine d\'être livré.',

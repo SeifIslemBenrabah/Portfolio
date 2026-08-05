@@ -21,7 +21,7 @@ export function LogoStrip() {
               <img
                 src={p.image}
                 alt={p.title}
-                className={`h-7 sm:h-9 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 ${lightLogoClass(p)}`}
+                className={`h-7 sm:h-9 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 ${lightLogoClass()}`}
                 draggable={false}
                 loading="lazy"
               />
