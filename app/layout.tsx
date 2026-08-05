@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Providers } from './providers';
+import { IntroOverlay } from '@/components/site/intro-overlay';
 import './globals.css';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio';
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800;900&family=Funnel+Display:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap"
         />
       </head>
-      <body className="bg-paper text-ink antialiased"><Providers>{children}</Providers></body>
+      <body className="bg-paper text-ink antialiased">
+        <IntroOverlay />
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
