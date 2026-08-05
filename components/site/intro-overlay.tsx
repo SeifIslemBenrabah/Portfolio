@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 
-const TRANSITION = { duration: 0.9, delay: 0.35, ease: [0.76, 0, 0.24, 1] as const };
+const TRANSITION = { duration: 1.7, delay: 0.6, ease: [0.76, 0, 0.24, 1] as const };
 
 export function IntroOverlay() {
   const [visible, setVisible] = useState(true);
@@ -14,7 +14,7 @@ export function IntroOverlay() {
       setSkip(true);
       return;
     }
-    const timer = setTimeout(() => setVisible(false), 1400);
+    const timer = setTimeout(() => setVisible(false), 2400);
     return () => clearTimeout(timer);
   }, []);
 
