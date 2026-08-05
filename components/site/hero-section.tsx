@@ -69,7 +69,7 @@ export function HeroSection() {
         key={p.id}
         src={p.image}
         alt={p.title}
-        className={`h-5 sm:h-6 w-auto object-contain grayscale opacity-100 shrink-0 ${lightLogoClass(p)}`}
+        className={`h-5 sm:h-6 w-auto object-contain opacity-100 shrink-0 ${lightLogoClass()}`}
         draggable={false}
       />
     ))}

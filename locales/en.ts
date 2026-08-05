@@ -37,6 +37,17 @@ export interface Dict {
     dev: { eyebrow: string; title: string; description: string };
     featured: string;
   };
+  project: {
+    backToDesign: string;
+    backToDev: string;
+    visitLive: string;
+    viewGithub: string;
+    viewBehance: string;
+    techStack: string;
+    features: string;
+    result: string;
+    grade: string;
+  };
   footer: {
     eyebrow: string;
     headline: string;
@@ -95,6 +106,17 @@ const en: Dict = {
         'Production web apps and microservices platforms — React, Node.js, Spring Boot, and FastAPI, shipped end-to-end.',
     },
     featured: 'Featured',
+  },
+  project: {
+    backToDesign: 'Back to Design',
+    backToDev: 'Back to Dev',
+    visitLive: 'Visit live site',
+    viewGithub: 'View on GitHub',
+    viewBehance: 'View case study on Behance',
+    techStack: 'Tech stack',
+    features: 'Features',
+    result: 'Result',
+    grade: 'Grade:',
   },
   footer: {
     eyebrow: 'Get in touch',

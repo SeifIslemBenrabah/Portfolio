@@ -321,3 +321,7 @@ export default projectsData;
 
 export const designProjects = projectsData.filter((p) => p.category !== 'Web Development');
 export const devProjects = projectsData.filter((p) => p.category === 'Web Development');
+
+export function getProjectById(id: string) {
+  return projectsData.find((p) => p.id === id);
+}
