@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from "framer-motion";
 import { Sun, Moon, User } from 'lucide-react';
 
 // --- Types ---
@@ -117,39 +116,21 @@ const TestimonialsColumn = (props: {
 }) => {
   return (
     <div className={props.className}>
-      <motion.ul
-        animate={{
-          translateY: "-50%",
+      <ul
+        style={{
+          animation: `scrollUp ${props.duration || 10}s linear infinite`,
         }}
-        transition={{
-          duration: props.duration || 10,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop",
-        }}
-        className="flex flex-col gap-6 pb-6 bg-transparent transition-colors duration-300 list-none m-0 p-0"
+        className="flex flex-col gap-6 pb-6 bg-transparent list-none m-0 p-0"
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
-                <motion.li
+                <li
                   key={`${index}-${i}`}
                   aria-hidden={index === 1 ? "true" : "false"}
                   tabIndex={index === 1 ? -1 : 0}
-                  whileHover={{
-                    scale: 1.03,
-                    y: -8,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
-                    transition: { type: "spring", stiffness: 400, damping: 17 }
-                  }}
-                  whileFocus={{
-                    scale: 1.03,
-                    y: -8,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
-                    transition: { type: "spring", stiffness: 400, damping: 17 }
-                  }}
-                  className="p-10 border border-paper-line shadow-sm max-w-xs w-full bg-paper-surface transition-all duration-300 cursor-default select-none group focus:outline-none"
+                  className="p-10 border border-paper-line shadow-sm max-w-xs w-full bg-paper-surface transition-all duration-300 cursor-default select-none group focus:outline-none hover:scale-[1.03] hover:-translate-y-2 hover:shadow-xl"
                 >
                   <blockquote className="m-0 p-0">
                     <p className="text-ink/70 leading-relaxed font-normal m-0 transition-colors duration-300">
@@ -167,12 +148,12 @@ const TestimonialsColumn = (props: {
                       </div>
                     </footer>
                   </blockquote>
-                </motion.li>
+                </li>
               ))}
             </React.Fragment>
           )),
         ]}
-      </motion.ul>
+      </ul>
     </div>
   );
 };
@@ -183,17 +164,8 @@ export const TestimonialsSection = () => {
       aria-labelledby="testimonials-heading"
       className="bg-transparent h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] flex flex-col relative overflow-hidden"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 50, rotate: -2 }}
-        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{
-          duration: 1.2,
-          ease: [0.16, 1, 0.3, 1],
-          opacity: { duration: 0.8 }
-        }}
-        className="container px-4 z-10 mx-auto h-full flex flex-col lg:relative lg:justify-center"
-      >
+        <div className="container px-4 z-10 mx-auto h-full flex flex-col lg:relative lg:justify-center">
+
         <div className="flex flex-col items-center justify-center w-full max-w-[22rem] mx-auto mb-8 sm:mb-10 lg:mb-0 shrink-0 pt-6 sm:pt-10 lg:pt-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:z-30 lg:pointer-events-none lg:bg-[linear-gradient(to_bottom,transparent_0%,var(--color-paper)_25%,var(--color-paper)_75%,transparent_100%)] lg:py-40 lg:px-6">
           <div className="flex justify-center lg:mt-32">
             <p className="text-ink/40 text-xs font-semibold uppercase tracking-[0.2em] mb-1">
@@ -218,7 +190,7 @@ export const TestimonialsSection = () => {
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>
-      </motion.div>
+        </div>
     </section>
   );
 };

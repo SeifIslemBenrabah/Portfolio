@@ -54,7 +54,23 @@ body {
   animation: marquee 32s linear infinite;
 }
 
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
 .text-stroke {
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-ink);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--color-paper-line) 25%, var(--color-paper-surface) 50%, var(--color-paper-line) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
 }
