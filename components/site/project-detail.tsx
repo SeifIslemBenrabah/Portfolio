@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
+import { ImageWithLoader } from '@/components/ui/image-with-loader';
 import { lightLogoClass } from '@/lib/utils';
 import { useTranslation } from '@/context/i18n';
 import type { ProjectData } from '@/types';
@@ -86,11 +87,10 @@ export function ProjectDetail({ project }: { project: ProjectData }) {
             className="mt-14 flex flex-col gap-4"
           >
             {project.images.map((src, i) => (
-              <img
+              <ImageWithLoader
                 key={src}
                 src={src}
                 alt={`${project.title} — ${i + 1}`}
-                loading="lazy"
                 className="w-full h-auto rounded-2xl border border-paper-line"
               />
             ))}

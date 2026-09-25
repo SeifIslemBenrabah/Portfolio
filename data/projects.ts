@@ -10,6 +10,8 @@ import logoSocialWorks from '@/assets/logos/socialworks.svg';
 import logoQwiki from '@/assets/logos/logo_qwiki.svg';
 import logoResynex from '@/assets/logos/resynex.svg';
 import logoEsiLearn from '@/assets/logos/esilearn.svg';
+import logoTropsImmo from '@/assets/logos/trops-immo.svg';
+import logoApCoach from '@/assets/logos/apcoach.svg';
 import type { ProjectData } from '@/types';
 
 const projectsData: ProjectData[] = [
@@ -138,6 +140,99 @@ const projectsData: ProjectData[] = [
     ],
   },
   {
+    id: 'resynex',
+    title: 'Resynex — Digital Twin-Driven Clinical Research',
+    category: 'Web Development',
+    image: logoResynex.src,
+    noInvert: true,
+    description: 'A microservices-driven Clinical Research Management Platform combining digital twin generation, RAG-powered research assistance, and AI-assisted documentation — all behind a unified Spring Cloud Gateway.',
+    link: 'https://resynex.tech',
+    tags: ['React', 'Node.js', 'FastAPI', 'Spring Boot', 'PyTorch', 'ChromaDB', 'MySQL', 'MongoDB', 'Redis', 'Docker', 'Gemini AI'],
+    year: '2026',
+    featured: true,
+    images: [
+      '/screenshots/resynex/dashboard.png'
+    ],
+    techStack: [
+      { layer: 'Frontend', tools: 'React / Vite / Tailwind CSS (port 5000)' },
+      { layer: 'Gateway', tools: 'Spring Cloud Gateway + Eureka service registry' },
+      { layer: 'Core Backend', tools: 'Node.js / Express — MySQL, Redis, MinIO' },
+      { layer: 'Digital Twin', tools: 'FastAPI + PyTorch — PPMI, Leukemia, T2D prediction models' },
+      { layer: 'RAG Service', tools: 'FastAPI + ChromaDB + MongoDB + MinIO — document ingestion & NotesLab' },
+      { layer: 'AI Assistant', tools: 'FastAPI + Google Gemini / Ollama — medical chat' },
+      { layer: 'Infrastructure', tools: 'Docker Compose, Elasticsearch, MinIO (S3-compatible)' },
+    ],
+    features: [
+      'Digital twin generation — predict disease progression using ML models trained on PPMI (Parkinson\'s), Leukemia, and T2D datasets via PyTorch',
+      'RAG research assistant — ingest clinical documents, query them via ChromaDB vector search, summarize findings, and manage notes per study',
+      'AI medical chat — conversational assistant powered by Google Gemini (or local Ollama) for clinical Q&A',
+      'Study & participant management — full CRUD for clinical studies, participant enrollment, and data tracking via the Node.js core API',
+      'Report generation — automated documentation and report export per study',
+      'Unified API gateway — Spring Cloud Gateway routes all traffic; Eureka registry tracks every microservice',
+      'Role-based auth — JWT-protected routes with WebSocket support for real-time updates',
+      'Full observability — Swagger UI on every service, Eureka dashboard, MinIO console, Elasticsearch for full-text search',
+    ],
+    result: 'A production-ready microservices platform deployable on any VM with Docker Compose in under 5 minutes. Eight containerized services communicate through the gateway, enabling end-to-end clinical trial management from participant enrollment to AI-assisted reporting.',
+  },
+  {
+    id: 'apcoach',
+    title: 'APCoach — Coaching Platform',
+    category: 'Web Development',
+    image: logoApCoach.src,
+    description: 'A bilingual (French & Arabic) coaching platform for Algerian coaches and clients. Features dark/light theme switching, RTL/LTR language support, PWA-ready with splash screen, and a clean professional interface for booking and managing coaching sessions.',
+    link: 'https://apcoach-dz.cloud/',
+    tags: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'PWA', 'i18n', 'RTL'],
+    year: '2026',
+    featured: true,
+    images: [
+      '/screenshots/apcoach/dashboard.png'
+    ],
+    techStack: [
+      { layer: 'Frontend', tools: 'React, Vite, TypeScript, Tailwind CSS' },
+      { layer: 'i18n', tools: 'Bilingual FR / AR with RTL ↔ LTR switching' },
+      { layer: 'Theme', tools: 'Dark / Light theme with zero-flash technique' },
+      { layer: 'PWA', tools: 'Web manifest, splash screen, iOS home-screen support' },
+      { layer: 'Fonts', tools: 'Kanit, Bebas Neue' },
+    ],
+    features: [
+      'Bilingual interface — French and Arabic with full RTL ↔ LTR dynamic switching, zero-flash language detection on load',
+      'Dark / Light theme — synchronous theme detection before first paint to prevent flash',
+      'PWA support — installable as a home-screen app on iOS and Android with custom splash screen',
+      'Coach profiles — browse and connect with certified Algerian coaches',
+      'Session management — book and manage coaching sessions online',
+    ],
+  },
+  {
+    id: 'trops-immo',
+    title: 'Trops Immo — Luxury Real Estate Platform',
+    category: 'Web Development',
+    image: logoTropsImmo.src,
+    description: 'A premium real estate website for TROPS IMMO, an Algerian luxury property developer. Showcases high-end residences with five-star concierge services, built with a sophisticated dark aesthetic and high-couture architecture presentation.',
+    link: 'https://www.trops-immo.com/',
+    tags: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'Luxury Design'],
+    year: '2026',
+    featured: true,
+    images: [
+      '/screenshots/trops-immo/home--pc.png',
+      '/screenshots/trops-immo/projects--pc.png',
+      '/screenshots/trops-immo/apartment-details-f3-a--pc.png',
+      '/screenshots/trops-immo/about--pc.png',
+    ],
+    techStack: [
+      { layer: 'Frontend', tools: 'React, Vite, TypeScript, Tailwind CSS' },
+      { layer: 'Styling', tools: 'Playfair Display & Inter fonts, dark luxury palette (#0F172A)' },
+      { layer: 'SEO', tools: 'Schema.org RealEstateAgent markup, canonical URLs' },
+      { layer: 'Deployment', tools: 'Production build, custom domain' },
+    ],
+    features: [
+      'Luxury property showcase — high-couture architecture presentation with premium visuals',
+      'Five-star concierge services section — premium service offerings display',
+      'Dark sophisticated design — deep navy palette with elegant Playfair Display typography',
+      'SEO optimized — Schema.org structured data, canonical links, bilingual-ready',
+      'Responsive — fully responsive from mobile to large screens',
+    ],
+  },
+  {
     id: 'coach-amine-website',
     title: 'Coach Amine — Official Website',
     category: 'Web Development',
@@ -248,38 +343,6 @@ const projectsData: ProjectData[] = [
       'Google OAuth2 — social login integration via Spring Security OAuth2 client',
       'Microservices architecture — catalog service (port 5050) and auth service (port 8080) run independently',
     ],
-  },
-  {
-    id: 'resynex',
-    title: 'Resynex — Digital Twin-Driven Clinical Research',
-    category: 'Web Development',
-    image: logoResynex.src,
-    noInvert: true,
-    description: 'A microservices-driven Clinical Research Management Platform combining digital twin generation, RAG-powered research assistance, and AI-assisted documentation — all behind a unified Spring Cloud Gateway.',
-    link: 'http://41.111.227.13:5000/',
-    tags: ['React', 'Node.js', 'FastAPI', 'Spring Boot', 'PyTorch', 'ChromaDB', 'MySQL', 'MongoDB', 'Redis', 'Docker', 'Gemini AI'],
-    year: '2026',
-    featured: true,
-    techStack: [
-      { layer: 'Frontend', tools: 'React / Vite / Tailwind CSS (port 5000)' },
-      { layer: 'Gateway', tools: 'Spring Cloud Gateway + Eureka service registry' },
-      { layer: 'Core Backend', tools: 'Node.js / Express — MySQL, Redis, MinIO' },
-      { layer: 'Digital Twin', tools: 'FastAPI + PyTorch — PPMI, Leukemia, T2D prediction models' },
-      { layer: 'RAG Service', tools: 'FastAPI + ChromaDB + MongoDB + MinIO — document ingestion & NotesLab' },
-      { layer: 'AI Assistant', tools: 'FastAPI + Google Gemini / Ollama — medical chat' },
-      { layer: 'Infrastructure', tools: 'Docker Compose, Elasticsearch, MinIO (S3-compatible)' },
-    ],
-    features: [
-      'Digital twin generation — predict disease progression using ML models trained on PPMI (Parkinson\'s), Leukemia, and T2D datasets via PyTorch',
-      'RAG research assistant — ingest clinical documents, query them via ChromaDB vector search, summarize findings, and manage notes per study',
-      'AI medical chat — conversational assistant powered by Google Gemini (or local Ollama) for clinical Q&A',
-      'Study & participant management — full CRUD for clinical studies, participant enrollment, and data tracking via the Node.js core API',
-      'Report generation — automated documentation and report export per study',
-      'Unified API gateway — Spring Cloud Gateway routes all traffic; Eureka registry tracks every microservice',
-      'Role-based auth — JWT-protected routes with WebSocket support for real-time updates',
-      'Full observability — Swagger UI on every service, Eureka dashboard, MinIO console, Elasticsearch for full-text search',
-    ],
-    result: 'A production-ready microservices platform deployable on any VM with Docker Compose in under 5 minutes. Eight containerized services communicate through the gateway, enabling end-to-end clinical trial management from participant enrollment to AI-assisted reporting.',
   },
   {
     id: 'esilearn',

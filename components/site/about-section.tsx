@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
 import portrait from '@/assets/images/lock-background.webp';
 import { stats } from '@/data/personal';
 import { cvExperience, cvEducation } from '@/data/cv';
@@ -29,12 +28,8 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="lg:fixed lg:top-20 self-start w-full max-w-[300px] xl:max-w-[360px]">
-              <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
+              <div>
+
               <div className="w-40 sm:w-52 aspect-[4/5] mb-8 overflow-hidden bg-paper-surface border border-paper-line">
                 <img src={portrait.src} alt="" className="w-full h-full object-cover object-top" draggable={false} />
               </div>
@@ -42,17 +37,11 @@ export function AboutSection() {
               <h2 className="font-condensed font-black text-ink text-4xl sm:text-5xl leading-[0.95] uppercase">
                 {t.about.title}
               </h2>
-            </motion.div>
+              </div>
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-8"
-          >
+          <div className="lg:col-span-8">
             <p className="text-ink/60 text-base sm:text-lg leading-relaxed max-w-2xl">{t.about.bio}</p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pb-10 border-b border-paper-line">

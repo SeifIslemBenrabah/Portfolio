@@ -8,6 +8,7 @@ export interface CvExperience {
 export interface CvProject {
   name: string;
   tag: string;
+  link?: string;
   bullets: string[];
 }
 
@@ -72,11 +73,21 @@ export const cvExperience: CvExperience[] = [
 export const cvProjects: CvProject[] = [
   {
     name: 'Resynex — AI-Powered Clinical Research Platform',
-    tag: 'Full-Stack & AI/ML',
+    tag: 'End-of-Studies Project — Full-Stack & AI/ML',
+    link: 'https://resynex.tech',
     bullets: [
-      'Architected a 14-service microservices platform (Spring Cloud Gateway, Eureka, React/TypeScript, Node.js/Express, Python/FastAPI) orchestrated with Docker Compose on a Linux VPS.',
-      "Built a Patient Digital Twin Generator using real PPMI (Parkinson's) cohort data with Monte Carlo uncertainty quantification — 12-month progression forecasts at 84.7% accuracy.",
-      'Implemented RAG knowledge notebooks (NotesLab) on ChromaDB + Gemini API for document-grounded clinical research assistance, plus LitScope, a unified literature search across PubMed, Semantic Scholar, arXiv, and OpenAlex.',
+      'Architected and deployed a six-service microservices platform (Spring Cloud Gateway, Eureka, React/TypeScript, Node.js/Express, Python/FastAPI) containerised with Docker Compose behind a TLS reverse proxy on a Linux VPS, with a Jenkins pipeline for continuous deployment.',
+      "Built a patient Digital Twin Generator on a Neural Boltzmann Machine in PyTorch, trained end-to-end on 3,847 patients from the PPMI Parkinson's registry: 0.88 concordance for time to a motor milestone and 75% of the variance explained across nine clinical outcomes, with predictive intervals measured to be calibrated at or above their nominal level.",
+      'Implemented RAG knowledge notebooks on ChromaDB + Gemini with answer-level citations and explicit refusal, Kernel SHAP explanations for every prediction, and LitScope, a unified literature search across PubMed, Semantic Scholar, arXiv, and OpenAlex.',
+    ],
+  },
+  {
+    name: 'AP Coach — Football Club Management Platform',
+    tag: 'Client Project',
+    link: 'https://apcoach-dz.cloud/',
+    bullets: [
+      "Offline-first React/TypeScript PWA over an Express, Prisma and PostgreSQL API: every feature works with no connection and syncs across a coach's own devices through an IndexedDB write queue.",
+      'Role-based access for four staff roles, a live analytics dashboard, automatic monthly PDF reports and a bilingual Arabic/French RTL interface, shipped with Docker and GitHub Actions quality gates.',
     ],
   },
   {

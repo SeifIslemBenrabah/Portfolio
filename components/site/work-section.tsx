@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { LogoStrip } from '@/components/site/logo-strip';
+import { ImageWithLoader } from '@/components/ui/image-with-loader';
 import { designProjects, devProjects } from '@/data/projects';
 import { lightLogoClass } from '@/lib/utils';
 import { useTranslation } from '@/context/i18n';
@@ -15,22 +15,16 @@ function ProjectCard({ project, index }: { project: ProjectData; index: number }
   const thumb = project.images?.[0];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div>
       <Link
         href={`/projects/${project.id}`}
         className="group relative block rounded-2xl overflow-hidden bg-white border border-neutral-200 hover:border-neutral-300 transition-colors cursor-pointer"
       >
         <div className="relative aspect-video overflow-hidden bg-ink/5">
           {thumb ? (
-            <img
+            <ImageWithLoader
               src={thumb}
               alt={project.title}
-              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
@@ -62,7 +56,7 @@ function ProjectCard({ project, index }: { project: ProjectData; index: number }
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }
 
