@@ -10,3 +10,9 @@ export function cn(...inputs: ClassValue[]) {
 export function lightLogoClass() {
   return 'grayscale brightness-0';
 }
+
+// Plain <img> tags don't get Next's basePath, so files from public/ must be
+// prefixed manually or they 404 on GitHub Pages (served under /<repo>/).
+export function withBasePath(path: string) {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio'}${path}`;
+}

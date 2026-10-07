@@ -13,6 +13,7 @@ import logoEsiLearn from '@/assets/logos/esilearn.svg';
 import logoTropsImmo from '@/assets/logos/trops-immo.svg';
 import logoApCoach from '@/assets/logos/apcoach.svg';
 import type { ProjectData } from '@/types';
+import { withBasePath } from '@/lib/utils';
 
 const projectsData: ProjectData[] = [
   {
@@ -151,7 +152,7 @@ const projectsData: ProjectData[] = [
     year: '2026',
     featured: true,
     images: [
-      '/screenshots/resynex/dashboard.png'
+      withBasePath('/screenshots/resynex/dashboard.png')
     ],
     techStack: [
       { layer: 'Frontend', tools: 'React / Vite / Tailwind CSS (port 5000)' },
@@ -185,7 +186,7 @@ const projectsData: ProjectData[] = [
     year: '2026',
     featured: true,
     images: [
-      '/screenshots/apcoach/dashboard.png'
+      withBasePath('/screenshots/apcoach/dashboard.png')
     ],
     techStack: [
       { layer: 'Frontend', tools: 'React, Vite, TypeScript, Tailwind CSS' },
@@ -213,10 +214,10 @@ const projectsData: ProjectData[] = [
     year: '2026',
     featured: true,
     images: [
-      '/screenshots/trops-immo/home--pc.png',
-      '/screenshots/trops-immo/projects--pc.png',
-      '/screenshots/trops-immo/apartment-details-f3-a--pc.png',
-      '/screenshots/trops-immo/about--pc.png',
+      withBasePath('/screenshots/trops-immo/home--pc.png'),
+      withBasePath('/screenshots/trops-immo/projects--pc.png'),
+      withBasePath('/screenshots/trops-immo/apartment-details-f3-a--pc.png'),
+      withBasePath('/screenshots/trops-immo/about--pc.png'),
     ],
     techStack: [
       { layer: 'Frontend', tools: 'React, Vite, TypeScript, Tailwind CSS' },
