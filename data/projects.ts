@@ -163,6 +163,13 @@ const projectsData: ProjectData[] = [
       { layer: 'AI Assistant', tools: 'FastAPI + Google Gemini / Ollama — medical chat' },
       { layer: 'Infrastructure', tools: 'Docker Compose, Elasticsearch, MinIO (S3-compatible)' },
     ],
+    architecture: [
+      { name: 'Client', nodes: ['React Web App'] },
+      { name: 'Gateway', nodes: ['Spring Cloud Gateway', 'Eureka Registry'] },
+      { name: 'Services', nodes: ['Core API · Node.js', 'Digital Twin · PyTorch', 'RAG Service · FastAPI', 'AI Assistant · Gemini'] },
+      { name: 'Data', nodes: ['MySQL', 'MongoDB', 'Redis', 'ChromaDB', 'MinIO', 'Elasticsearch'] },
+    ],
+    architectureNote: '8 containerized services · Docker Compose',
     features: [
       'Digital twin generation — predict disease progression using ML models trained on PPMI (Parkinson\'s), Leukemia, and T2D datasets via PyTorch',
       'RAG research assistant — ingest clinical documents, query them via ChromaDB vector search, summarize findings, and manage notes per study',

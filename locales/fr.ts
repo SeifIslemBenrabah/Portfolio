@@ -56,6 +56,7 @@ const fr: Dict = {
     viewGithub: 'Voir sur GitHub',
     viewBehance: 'Voir l\'étude de cas sur Behance',
     techStack: 'Stack technique',
+    architecture: 'Architecture',
     features: 'Fonctionnalités',
     result: 'Résultat',
     grade: 'Note :',

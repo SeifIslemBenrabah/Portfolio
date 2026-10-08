@@ -3,6 +3,12 @@ export interface TechRow {
   tools: string;
 }
 
+// One tier of an architecture diagram, drawn top (client) to bottom (data).
+export interface ArchLayer {
+  name: string;
+  nodes: string[];
+}
+
 export interface ProjectData {
   id: string;
   title: string;
@@ -15,6 +21,8 @@ export interface ProjectData {
   featured?: boolean;
   duration?: string;
   techStack?: TechRow[];
+  architecture?: ArchLayer[];
+  architectureNote?: string;
   features?: string[];
   month?: string;
   noInvert?: boolean;

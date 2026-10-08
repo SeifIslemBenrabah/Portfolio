@@ -44,6 +44,7 @@ export interface Dict {
     viewGithub: string;
     viewBehance: string;
     techStack: string;
+    architecture: string;
     features: string;
     result: string;
     grade: string;
@@ -114,6 +115,7 @@ const en: Dict = {
     viewGithub: 'View on GitHub',
     viewBehance: 'View case study on Behance',
     techStack: 'Tech stack',
+    architecture: 'Architecture',
     features: 'Features',
     result: 'Result',
     grade: 'Grade:',

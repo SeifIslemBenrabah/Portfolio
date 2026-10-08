@@ -120,6 +120,47 @@ export function ProjectDetail({ project }: { project: ProjectData }) {
           </div>
         )}
 
+        {project.architecture && (
+          <div className="mt-14">
+            <h2 className="text-ink text-sm font-semibold uppercase tracking-[0.15em] mb-5">{t.project.architecture}</h2>
+            <div className="rounded-2xl border border-paper-line bg-paper-surface p-5 sm:p-8">
+              {project.architecture.map((layer, i) => (
+                <React.Fragment key={layer.name}>
+                  {i > 0 && (
+                    <div className="flex sm:gap-5 py-1.5" aria-hidden>
+                      <span className="hidden sm:block sm:w-24 shrink-0" />
+                      <div className="flex flex-col items-center pl-8">
+                        <span className="w-px h-5 bg-ink/25" />
+                        <span className="w-0 h-0 border-x-[5px] border-x-transparent border-t-[6px] border-t-ink/35" />
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5">
+                    <span className="text-ink/40 text-[11px] font-semibold uppercase tracking-[0.18em] sm:w-24 shrink-0 sm:text-right">
+                      {layer.name}
+                    </span>
+                    <div className="flex flex-wrap gap-2 flex-1">
+                      {layer.nodes.map((node) => (
+                        <span
+                          key={node}
+                          className="px-3.5 py-2 text-xs sm:text-sm bg-paper border border-ink/15 text-ink/80 font-medium"
+                        >
+                          {node}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </React.Fragment>
+              ))}
+              {project.architectureNote && (
+                <p className="mt-6 pt-4 border-t border-paper-line text-ink/45 text-xs uppercase tracking-[0.15em] text-center">
+                  {project.architectureNote}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+
         {project.features && (
           <div className="mt-14">
             <h2 className="text-ink text-sm font-semibold uppercase tracking-[0.15em] mb-5">{t.project.features}</h2>
